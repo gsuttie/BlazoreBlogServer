@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Data.Interfaces
 {
-    interface IMyBlogItem
+    public interface IMyBlogItem
     {
         public int Id { get; set; }
     }

@@ -5,10 +5,10 @@ using MyBlog.Data.Models;
 
 namespace MyBlog.Data
 {
-    public class MyBlogContext : DbContext
+    public class MyBlogDbContext : DbContext
     {
 
-        public MyBlogContext(DbContextOptions<MyBlogContext> context) : base(context)
+        public MyBlogDbContext(DbContextOptions<MyBlogDbContext> context) : base(context)
         { 
         
         }
@@ -17,14 +17,14 @@ namespace MyBlog.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
 
-        public class MyBlogDbContextFactory : IDesignTimeDbContextFactory<MyBlogContext>
+        public class MyBlogDbContextFactory : IDesignTimeDbContextFactory<MyBlogDbContext>
         {
-            public MyBlogContext CreateDbContext(string[] args)
+            public MyBlogDbContext CreateDbContext(string[] args)
             {
-                var optionsBuilder = new DbContextOptionsBuilder<MyBlogContext>();
+                var optionsBuilder = new DbContextOptionsBuilder<MyBlogDbContext>();
                 optionsBuilder.UseSqlite("Data Source = test.db");
 
-                return new MyBlogContext(optionsBuilder.Options);
+                return new MyBlogDbContext(optionsBuilder.Options);
             }
         }
     }

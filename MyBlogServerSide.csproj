@@ -5,4 +5,8 @@
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="MyBlog.Data\MyBlog.Data.csproj" />
+  </ItemGroup>
+
 </Project>
